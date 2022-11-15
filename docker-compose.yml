@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  scanner:
+    container_name: scanner
+    build: .
+    restart: "always"
+    privileged: true
+    volumes:
+      - /mnt/user/appdata/paperless-ngx/data/consume:/scans
+      - /var/run/dbus:/var/run/dbus
